@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Demo</title>
+</head>
+<body>
+    <h1>XSS Demo</h1>
+    <div>
+        <input type="text" id="input-text"/>
+        <input type="button" value="Display" onclick="handleClick()" />
+    </div>
+    <br><br>
+    <div id="display">
+        Input will be displayed here upon clicking "Display" button.
+    </div>
+</body>
+<script type="text/javascript">
+    function handleClick(){
+        const value = document.getElementById("input-text").value;
+        document.getElementById("display").innerHTML = value;
+    }
+</script>
+</html>
