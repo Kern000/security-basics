@@ -1,38 +1,47 @@
-== 100 Security Vulnerabilities of Web Applications ==
+== 100 Security Vulnerabilities of Web Application and system design ==
 
 -- Top 10 categories in 2023 -- OWASP
 
-1. Broken Access Control 
+1. Broken Access Control
+
 - Improper/Ineffective access controls that allow unauthorized users.
 
 2. Cryptographic failures (sensitive data exposure)
+
 - sensitive data such as passwords or credit card numbers not properly protected thru encryption.
 
 3. Injection
+
 - Untrusted data improperly handled, allow atker to inject malicious code (SQL Injection, NoSQL injection) that manipulate application's database and commands
 
 4. Insecure design
+
 - lack of proper segregation of duties or validation of user input
 
 5. Security Misconfiguration
+
 - Application/ underlying components not configured securely - improper permissions, unnecessary features
 
 6. Vulnerable and Outdated Components
+
 - 3rd party libraries, frameworks, plugins that have known security vulnerabilities or are outdated.
 
 7. Identification and Authentication Failures
+
 - weak passwords, lack multi-factor authentication, session related issues.
 
 8. Software and Data Integrity Failures
 
 9. Security Logging and Monitoring Failures
+
 - ineffective/insufficient logging and monitoring practices
 
 10. Server-side Request Forgery
+
 - atker manip server-side requests and make application perform unintended actions, potentially accessing resources that should be restricted
 
 ===================================
-    No.1 Broken Access control
+No.1 Broken Access control
 
 1. Horizontal Privilege Escalation: A regular user is able to modify their user ID in a URL parameter and access administrative functionalities, gaining unauthorized privileges.
 
@@ -55,7 +64,7 @@
 10. Insecure Cross-Origin Resource Sharing (CORS): The application allows cross-origin requests from any domain, potentially enabling attackers to make unauthorized requests on behalf of authenticated users, leading to data exposure or manipulation.
 
 ===================================
-    no.2 cryptographic failure
+no.2 cryptographic failure
 
 11. Weak Encryption Algorithms: Using outdated or weak encryption algorithms, such as MD5 or SHA-1, which are susceptible to brute force attacks and can be easily cracked by modern computing power.
 
@@ -78,30 +87,30 @@
 20. Cryptographic Padding Oracle Attacks: Failing to properly implement cryptographic padding in encryption algorithms, enabling attackers to exploit padding oracle vulnerabilities and decrypt ciphertexts.
 
 ===================================
-    No. 3 injection
+No. 3 injection
 
 21. SQL Injection (SQLi): An attacker inserts malicious SQL code into input fields to manipulate the application's database queries. For example, by entering ' OR 1=1 -- in a login form, the attacker can bypass authentication.
 
 22. Cross-Site Scripting (XSS) Injection: An attacker injects malicious scripts into input fields, which are then executed in the browsers of other users accessing the application. This allows the attacker to steal cookies, redirect users, or perform other malicious actions.
 
-22. NoSQL Injection: Similar to SQLi, but specific to NoSQL databases, attackers inject malicious code to exploit weaknesses in the way queries are constructed, potentially bypassing authentication or extracting sensitive data.
+23. NoSQL Injection: Similar to SQLi, but specific to NoSQL databases, attackers inject malicious code to exploit weaknesses in the way queries are constructed, potentially bypassing authentication or extracting sensitive data.
 
-23. Command Injection: Attackers manipulate input fields to inject operating system commands that are executed on the server, leading to unauthorized access or execution of malicious commands.
+24. Command Injection: Attackers manipulate input fields to inject operating system commands that are executed on the server, leading to unauthorized access or execution of malicious commands.
 
-24. XML Injection: Attackers manipulate XML input to exploit parsing vulnerabilities, potentially causing the application to disclose sensitive data or perform unintended actions.
+25. XML Injection: Attackers manipulate XML input to exploit parsing vulnerabilities, potentially causing the application to disclose sensitive data or perform unintended actions.
 
-25. LDAP Injection: Attackers inject malicious code into LDAP queries, potentially bypassing authentication and accessing unauthorized resources or sensitive data.
+26. LDAP Injection: Attackers inject malicious code into LDAP queries, potentially bypassing authentication and accessing unauthorized resources or sensitive data.
 
-26. XPath Injection: Similar to LDAP injection, attackers manipulate XPath queries to exploit XML parsing vulnerabilities and extract sensitive data or gain unauthorized access.
+27. XPath Injection: Similar to LDAP injection, attackers manipulate XPath queries to exploit XML parsing vulnerabilities and extract sensitive data or gain unauthorized access.
 
-27. HTML Injection (DOM-based XSS): Attackers inject malicious HTML or JavaScript code into web pages that are then executed within the victim's browser, leading to data theft or unauthorized actions.
+28. HTML Injection (DOM-based XSS): Attackers inject malicious HTML or JavaScript code into web pages that are then executed within the victim's browser, leading to data theft or unauthorized actions.
 
-28. Server-Side Template Injection (SSTI): Attackers inject malicious code into server-side templates, which get executed on the server, potentially leading to remote code execution or data exposure.
+29. Server-Side Template Injection (SSTI): Attackers inject malicious code into server-side templates, which get executed on the server, potentially leading to remote code execution or data exposure.
 
-29. Code Injection (Remote Code Execution): Attackers inject malicious code that gets executed by the application server, leading to complete control over the application or server and potential data theft or further attacks.
+30. Code Injection (Remote Code Execution): Attackers inject malicious code that gets executed by the application server, leading to complete control over the application or server and potential data theft or further attacks.
 
 ===================================
-    no.4 Insecure design
+no.4 Insecure design
 
 30. Lack of Input Validation: Failing to validate user input properly can lead to various vulnerabilities, such as SQL injection, cross-site scripting (XSS), and command injection.
 
@@ -124,7 +133,7 @@
 39. Lack of Secure Communications: Failing to use secure communication protocols like HTTPS can result in the exposure of sensitive data during transmission.
 
 ===================================
-    No.5 security misconfiguration
+No.5 security misconfiguration
 
 40. Default Credentials: Leaving default usernames and passwords for administrative accounts or services without changing them, making it easier for attackers to gain unauthorized access.
 
@@ -147,7 +156,7 @@
 49. Outdated Software and Patching: Neglecting to update web servers, frameworks, libraries, and other software components regularly leaves known vulnerabilities unpatched, making the application more susceptible to attacks.
 
 ===================================
-    no.6 outdated components
+no.6 outdated components
 
 50. Outdated Server Software: Running web servers, such as Apache or Nginx, without applying the latest security patches and updates can expose the application to known vulnerabilities.
 
@@ -170,7 +179,7 @@
 59. Obsolete Encryption Algorithms: Implementing outdated or weak encryption algorithms that are no longer considered secure can jeopardize the confidentiality of sensitive data.
 
 ===================================
-    no.7 Identification and Authentication Failures
+no.7 Identification and Authentication Failures
 
 60. Weak Password Policies: Allowing users to set weak passwords that are easy to guess or using passwords that have been previously compromised.
 
@@ -195,7 +204,7 @@
 70. OTP fatigue: OTP keep coming to you, frustrated, so comply. Or when you click on a phishing website - u key in username and password - The scammer goes inside your account, call u to get your OTP, saying there is a problem.
 
 ===================================
-    no.8 Software and Data Integrity Failures ten examples
+no.8 Software and Data Integrity Failures ten examples
 
 71. Code Injection: Allowing untrusted data to be executed as code, leading to unintended consequences and potentially enabling attackers to inject malicious code into the application.
 
@@ -217,8 +226,7 @@
 
 80. Code Tampering: Allowing unauthorized users to modify application code or data, leading to unauthorized access, data manipulation, or the introduction of security vulnerabilities.
 
-===================================
-    9. Logging
+=================================== 9. Logging
 
 81. Insufficient Log Data: Failing to log important security events, such as failed login attempts, access control failures, or critical system activities, which hinders the detection and investigation of security incidents.
 
@@ -241,7 +249,7 @@
 90. Limited Visibility into Application Layer: Not capturing detailed logs from the application layer, including user interactions and input validation results, which can hinder understanding and troubleshooting of security incidents.
 
 ===================================
-    no. 10 server-side request forgery (SSRF) vulnerabilities in web applications
+no. 10 server-side request forgery (SSRF) vulnerabilities in web applications
 
 91. Accessing Internal Services: An attacker exploits SSRF to make requests to internal services or resources accessible from the server, potentially revealing sensitive information or affecting their functionality.
 
@@ -261,16 +269,18 @@
 
 99. SSRF in Image or File Processing: An attacker uploads an image or file and uses SSRF to trigger processing on external systems, potentially causing them to execute malicious code or exfiltrate data.
 
-100. Exploiting Internal Authentication Services: By abusing SSRF, an attacker can make requests to internal authentication services, potentially bypassing authentication and gaining unauthorized access to the application.
+100.  Exploiting Internal Authentication Services: By abusing SSRF, an attacker can make requests to internal authentication services, potentially bypassing authentication and gaining unauthorized access to the application.
 
 ---
+
 4 Key areas to protect:
 Server
 Network
 OS - cloud application, OS minimal, all send to container
 Application
 
-Need to have a defense plan in place 
+Need to have a defense plan in place
+
 - For example, logging and monitoring that alerts that a person is coming in, and if unauthorized, immediately block the person - there is no time to think.
 
 Any Form that accepts input (input type text/javascript etc)
@@ -308,27 +318,32 @@ test will prevent syntax error, and delete from table, and then comment out what
 import sqlite3
 
 # User input (avoid direct interpolation into the query)
+
 user_input = "John"
 
 # Connecting to the database
+
 conn = sqlite3.connect("example.db")
 cursor = conn.cursor()
 
 # Using a parameterized query with a placeholder (?)
-query = "SELECT * FROM users WHERE username = ?"                   <----- This is the parameterized area
-cursor.execute(query, (user_input,))                               <----- This is the parameterized area
+
+query = "SELECT \* FROM users WHERE username = ?" <----- This is the parameterized area
+cursor.execute(query, (user_input,)) <----- This is the parameterized area
 
 # Fetching results
+
 results = cursor.fetchall()
 for row in results:
-    print(row)
+print(row)
 
 # Closing the connection
+
 conn.close()
 
 The parameterized query uses a placeholder ? in the SQL query string, and the actual user input user_input is passed as a tuple (user_input,) as the second argument to the execute() method. This way, the database driver handles the escaping and quoting of the user input, preventing SQL injection vulnerabilities.
 
---- Code scan report --- 
+--- Code scan report ---
 have a code scan software to highlight unsafe code that is written during development.
 
 --- XSS ---
@@ -345,7 +360,7 @@ XSS vulnerabilities arise when web applications do not properly sanitize or vali
 
 Input Validation and Sanitization: Ensure that all user-supplied data is validated, sanitized, and escaped before being displayed on web pages.
 
------
+---
 
 Q1: How does modern frontend framework such as ReactJS, VueJS, and Angular prevent XSS attack?
 
@@ -375,7 +390,7 @@ escapedHTML.innerText = userInput;
 const safeHTML = escapedHTML.innerHTML;
 console.log(safeHTML); // Output: &lt;script&gt;alert("XSS Attack!");&lt;/script&gt;
 
-----------------------------
+---
 
 Q2: Security and performance are often considered as two extreme ends of a spectrum in software development. How can we strike a balance between the two when come to designing our system?
 
@@ -384,16 +399,28 @@ Secure by Design: Incorporate security considerations into the system's design f
 Use Benchmarks: some Industry may need more
 Risk assessment - cost / risk evaluation
 
-----------------------------
+---
 
+Encrypt data at rest
+Encrypt data at transition
+Encrypt data at use
 
+Web socket can be initiated by the server and received by the server (send to the client)
+// rather than req res from the client
 
+======== Data Governance ========
 
+Encryption (at rest), Access controls (use), Endpoint Security (transit)
+Secure Processing - coding practices, input validation - Data in use
+hold data in memory = at rest, secure computing environments (secure enclaves and trusted execution env)
+=> consistency, Integrity, Accessiblity
 
+Security measure on endpoint can mean encryption
+protect data = confidentiality
+change and manip data = ensure integrity
+protect data while its being used = availability
+(CIA)
 
+Consideration: how long should the data stay there - data can be at rest at your mobile phone
 
-
-
-
-
-
+---
